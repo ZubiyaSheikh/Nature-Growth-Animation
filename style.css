@@ -1,0 +1,277 @@
+* {
+    margin: 0; /* Removes default browser spacing */
+    padding: 0; /* Removes default browser padding */
+    box-sizing: border-box; /* Keeps element sizes predictable */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Sets the page font */
+    background: #86d1f7; /* Gives the page a soft natural background */
+    color: #17351f; /* Sets a dark green text color */
+}
+
+main {
+    height: 250vh; /* Creates enough scroll space */
+}
+
+.hero {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    padding: 70px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(1.8rem, 4vw, 4.5rem); /* Makes the heading slightly smaller */
+    letter-spacing: 0.25em; /* Keeps the wide spacing without making it too wide */
+    text-align: center; /* Centers the heading */
+    font-weight: 500; /* Keeps the heading elegant */
+    white-space: nowrap; /* Prevents the heading from moving to another line */
+}
+
+.stats {
+    width: 100%; /* Uses the available width */
+    max-width: 1100px; /* Prevents statistics from becoming too wide */
+    margin-top: 70px; /* Creates space below the heading */
+    display: flex; /* Places statistics in a row */
+    justify-content: space-between; /* Spreads statistics across the screen */
+    gap: 30px; /* Adds space between statistics */
+}
+
+.stat {
+    text-align: center; /* Centers each statistic */
+}
+
+.stat h2 {
+    font-size: 2.5rem; /* Makes the percentage large */
+    font-weight: 600; /* Gives the percentage emphasis */
+}
+
+.stat p {
+    margin-top: 8px; /* Adds space below the percentage */
+    font-size: 0.9rem; /* Makes the description smaller */
+}
+
+.nature-scene {
+    position: absolute; /* Allows the scene to be positioned freely */
+    bottom: 0; /* Places the scene at the bottom */
+    left: 0; /* Starts the scene from the left */
+    width: 100%; /* Makes the scene full width */
+    height: 45%; /* Gives the scene its initial height */
+    display: flex; /* Enables positioning of the plant */
+    justify-content: center; /* Centers the plant horizontally */
+    align-items: flex-end; /* Places the plant near the ground */
+}
+
+.ground {
+    position: absolute; /* Positions the ground independently */
+    bottom: 0; /* Places it at the bottom */
+    width: 100%; /* Makes the ground span the screen */
+    height: 80px; /* Gives the ground some depth */
+    background: #6b8e5a; /* Gives the ground a natural green color */
+}
+
+.plant {
+    position: relative; /* Allows future animation */
+    z-index: 2; /* Places the plant above the ground */
+    font-size: 7rem; /* Makes the plant visible */
+    margin-bottom: 50px; /* Moves it slightly above the ground */
+}
+
+.plant {
+    position: relative;
+    width: 160px;
+    height: 260px;
+    margin-bottom: 50px;
+}
+
+.stem {
+    position: absolute;
+    width: 10px;
+    height: 210px;
+    background: #3f6f3f;
+    left: 75px;
+    bottom: 0;
+    border-radius: 10px;
+}
+
+.leaf {
+    position: absolute;
+    width: 75px;
+    height: 40px;
+    background: #5f9655;
+    border-radius: 100% 0 100% 0;
+}
+
+.leaf-left {
+    left: 10px;
+    bottom: 90px;
+    transform: rotate(-25deg);
+}
+
+.leaf-right {
+    right: 10px;
+    bottom: 135px;
+    transform: rotate(25deg) scaleX(-1);
+}
+.leaf-1 {
+    bottom: 70px;
+}
+
+.leaf-2 {
+    bottom: 105px;
+}
+
+.leaf-3 {
+    bottom: 140px;
+}
+
+.leaf-4 {
+    bottom: 175px;
+}
+
+.branch {
+    position: absolute;
+    width: 90px;
+    height: 8px;
+    background: #3f6f3f;
+    border-radius: 10px;
+    transform-origin: right center;
+}
+
+.branch-left {
+    left: -5px;
+    bottom: 135px;
+    transform: rotate(-35deg);
+}
+
+.branch-right {
+    left: 75px;
+    bottom: 170px;
+    transform-origin: left center;
+    transform: rotate(35deg);
+}
+
+.branch-left-2 {
+    left: 15px;
+    bottom: 200px;
+    width: 75px;
+    transform: rotate(-45deg);
+}
+
+.branch-right-2 {
+    left: 75px;
+    bottom: 225px;
+    width: 75px;
+    transform: rotate(45deg);
+}
+
+.flower {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.flower span {
+    position: absolute;
+    width: 30px;
+    height: 42px;
+    background: #e96b91;
+    border-radius: 50% 50% 45% 45%;
+    left: 20px;
+    top: 4px;
+    transform-origin: 15px 31px;
+}
+
+.flower span:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.flower span:nth-child(2) {
+    transform: rotate(72deg);
+}
+
+.flower span:nth-child(3) {
+    transform: rotate(144deg);
+}
+
+.flower span:nth-child(4) {
+    transform: rotate(216deg);
+}
+
+.flower span:nth-child(5) {
+    transform: rotate(288deg);
+}
+
+.flower::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #f5c84b;
+    border-radius: 50%;
+    left: 26px;
+    top: 26px;
+}
+
+/* Flower positions */
+
+.flower-1 {
+    left: -35px;
+    bottom: 165px;
+}
+
+.flower-2 {
+    right: -35px;
+    bottom: 175px;
+}
+
+.flower-3 {
+    left: 0;
+    bottom: 220px;
+}
+
+.flower-4 {
+    right: 0;
+    bottom: 225px;
+}
+
+.flower-5 {
+    left: 58px;
+    bottom: 260px;
+}
+
+.flower-top {
+    left: 47px;
+    bottom: 295px;
+}
+.timeline {
+    position: fixed;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 10;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border: 2px solid #3f6f3f;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.dot.active {
+    background: #3f6f3f;
+    opacity: 1;
+    transform: scale(1.3);
+}
